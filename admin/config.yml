@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: DEIN_GITHUB_BENUTZERNAME/DEIN_REPO_NAME
+  repo: xamiax/kochbuch
   branch: main
 
 collections:

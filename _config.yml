@@ -1,6 +1,6 @@
-title: "CookHub Pages"
+title: "Kochbuch"
 description: "Ein minimalistisches Kochbuch-Template auf GitHub Pages"
-baseurl: ""
+baseurl: "/kochbuch"
 url: ""
 
 markdown: kramdown
