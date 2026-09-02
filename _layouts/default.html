@@ -4,16 +4,61 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title }} | {{ site.title }}</title>
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
+  <div class="site-wrapper">
+    <header class="site-header">
+      <div class="header-content">
+        <button id="menu-toggle" class="menu-btn" aria-label="Menü öffnen">
+          <span class="hamburger"></span>
+        </button>
+        <h1 class="site-title"><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
+        <button id="theme-toggle" class="theme-btn" aria-label="Design wechseln">
+          <span class="theme-icon">🌓</span>
+        </button>
+      </div>
+    </header>
+
+    <div class="layout-container">
+      <div id="sidebar-backdrop" class="sidebar-backdrop"></div>
+      <aside id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+          <h2>Kategorien</h2>
+          <button id="close-sidebar" class="close-btn" aria-label="Menü schließen">&times;</button>
+        </div>
+        <nav class="category-nav">
+          <button class="filter-btn active" data-category="all">Alle Rezepte</button>
+          {% assign raw_categories = "" | split: "" %}
+          {% for item in site.rezepte %}
+            {% if item.category %}
+              {% assign raw_categories = raw_categories | push: item.category %}
+            {% endif %}
+          {% endfor %}
+          {% assign categories = raw_categories | uniq | sort %}
+          {% for category in categories %}
+            <button class="filter-btn" data-category="{{ category }}">{{ category | capitalize }}</button>
+          {% endfor %}
+        </nav>
+      </aside>
+
+      <main class="main-content">
+        {{ content }}
+      </main>
     </div>
-  </header>
-  <main class="container">
-    {{ content }}
-  </main>
+  </div>
+
+  <script src="{{ '/assets/js/theme.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/menu.js' | relative_url }}"></script>
 </body>
 </html>
