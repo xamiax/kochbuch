@@ -3,6 +3,8 @@ backend:
   repo: xamiax/kochbuch
   branch: main
 
+media_folder: "_rezepte"
+
 collections:
   - name: "rezepte"
     label: "Rezepte"
