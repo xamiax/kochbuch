@@ -5,7 +5,7 @@ title: "Übersicht"
 <section class="recipe-grid" id="recipe-list">
   {% for item in site.rezepte %}
     <article class="recipe-card" data-category="{{ item.category }}">
-      {% if item.image %}
+      {% if item.image and item.image != "" %}
         <a href="{{ item.url | relative_url }}" class="card-image-link">
           <img src="{{ item.url | append: item.image | relative_url }}" alt="{{ item.title }}">
         </a>

@@ -2,9 +2,9 @@
 layout: default
 ---
 <article class="recipe">
-  <nav class="breadcrumb">
-    <a href="{{ '/' | relative_url }}">← Zur Übersicht</a>
-  </nav>
+  <div class="breadcrumb">
+    <a href="{{ '/' | relative_url }}">&larr; Zurück zur Übersicht</a>
+  </div>
 
   <header class="recipe-header">
     <h1>{{ page.title }}</h1>
@@ -13,10 +13,10 @@ layout: default
     {% endif %}
   </header>
 
-  {% if page.image %}
-  <div class="recipe-image">
-    <img src="{{ page.url | append: page.image | relative_url }}" alt="{{ page.title }}">
-  </div>
+  {% if page.image and page.image != "" %}
+    <div class="recipe-image">
+      <img src="{{ page.url | append: page.image | relative_url }}" alt="{{ page.title }}">
+    </div>
   {% endif %}
 
   <div class="recipe-content">
