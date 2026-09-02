@@ -1,0 +1,35 @@
+---
+layout: default
+title: "Übersicht"
+---
+<section class="filter-controls">
+  <button class="filter-btn active" data-category="all">Alle</button>
+  {% assign raw_categories = "" | split: "" %}
+  {% for item in site.rezepte %}
+    {% if item.category %}
+      {% assign raw_categories = raw_categories | push: item.category %}
+    {% endif %}
+  {% endfor %}
+  {% assign categories = raw_categories | uniq | sort %}
+  {% for category in categories %}
+    <button class="filter-btn" data-category="{{ category }}">{{ category | capitalize }}</button>
+  {% endfor %}
+</section>
+
+<section class="recipe-grid" id="recipe-list">
+  {% for item in site.rezepte %}
+    <article class="recipe-card" data-category="{{ item.category }}">
+      {% if item.image %}
+        <a href="{{ item.url | relative_url }}" class="card-image-link">
+          <img src="{{ item.url | append: item.image | relative_url }}" alt="{{ item.title }}">
+        </a>
+      {% endif %}
+      <div class="card-content">
+        <span class="card-category">{{ item.category }}</span>
+        <h2><a href="{{ item.url | relative_url }}">{{ item.title }}</a></h2>
+      </div>
+    </article>
+  {% endfor %}
+</section>
+
+<script src="{{ '/assets/js/filter.js' | relative_url }}"></script>

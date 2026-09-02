@@ -1,0 +1,18 @@
+title: "CookHub Pages"
+description: "Ein minimalistisches Kochbuch-Template auf GitHub Pages"
+baseurl: ""
+url: ""
+
+markdown: kramdown
+
+collections:
+  rezepte:
+    output: true
+    permalink: /rezepte/:path/
+
+defaults:
+  - scope:
+      path: ""
+      type: "rezepte"
+    values:
+      layout: "recipe"
