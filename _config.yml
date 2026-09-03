@@ -6,3 +6,10 @@ collections:
   rezepte:
     output: true
     permalink: /rezepte/:path/
+
+defaults:
+  - scope:
+      path: ""
+      type: "rezepte"
+    values:
+      layout: "recipe"
