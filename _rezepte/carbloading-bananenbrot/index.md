@@ -14,7 +14,7 @@ image: ''
 * 30 g Apfelmark (ohne Zuckerzusatz)
 * 1 TL Backpulver
 * 1 Prise Salz
-* 1 TL Zimt
+* 1 TL Zimt (optional)
 
 ## Zubereitung
 
