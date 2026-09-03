@@ -4,13 +4,18 @@ title: "Übersicht"
 ---
 <section class="recipe-grid" id="recipe-list">
   {% for item in site.rezepte %}
+    {% assign recipe_dir = item.url | remove: "index.html" %}
+    {% unless recipe_dir ends_with: "/" %}
+      {% assign recipe_dir = recipe_dir | append: "/" %}
+    {% endunless %}
+
     {% assign recipe_image = "" %}
     {% if item.image and item.image != "" and item.image != "''" %}
       {% assign img_filename = item.image | remove_first: "./" %}
-      {% assign recipe_image = item.dir | append: img_filename %}
+      {% assign recipe_image = recipe_dir | append: img_filename %}
     {% else %}
       {% for static_file in site.static_files %}
-        {% if static_file.path contains item.dir %}
+        {% if static_file.path contains recipe_dir %}
           {% if static_file.extname == ".jpg" or static_file.extname == ".jpeg" or static_file.extname == ".png" or static_file.extname == ".webp" or static_file.extname == ".JPG" or static_file.extname == ".PNG" %}
             {% assign recipe_image = static_file.path %}
             {% break %}
