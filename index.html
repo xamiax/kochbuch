@@ -6,8 +6,9 @@ title: "Übersicht"
   {% for item in site.rezepte %}
     <article class="recipe-card" data-category="{{ item.category }}">
       {% if item.image and item.image != "" %}
+        {% assign img_path = item.image | remove_first: "./" %}
         <a href="{{ item.url | relative_url }}" class="card-image-link">
-          <img src="{{ item.url | append: item.image | relative_url }}" alt="{{ item.title }}">
+          <img src="{{ item.dir | append: img_path | relative_url }}" alt="{{ item.title }}">
         </a>
       {% endif %}
       <div class="card-content">

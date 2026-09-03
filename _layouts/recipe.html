@@ -14,8 +14,9 @@ layout: default
   </header>
 
   {% if page.image and page.image != "" %}
+    {% assign img_path = page.image | remove_first: "./" %}
     <div class="recipe-image">
-      <img src="{{ page.url | append: page.image | relative_url }}" alt="{{ page.title }}">
+      <img src="{{ page.dir | append: img_path | relative_url }}" alt="{{ page.title }}">
     </div>
   {% endif %}
 
