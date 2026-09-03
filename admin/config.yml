@@ -14,11 +14,6 @@ collections:
     media_folder: "./"
     public_folder: "./"
     fields:
-      - label: "Layout"
-        name: "layout"
-        widget: "hidden"
-        default: "recipe"
-
       - label: "Titel"
         name: "title"
         widget: "string"

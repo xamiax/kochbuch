@@ -13,7 +13,7 @@ layout: default
     {% endif %}
   </header>
 
-  {% if page.image and page.image != "" %}
+  {% if page.image and page.image != "" and page.image != "''" %}
     <div class="recipe-image">
       <img src="{{ page.url | append: page.image | relative_url }}" alt="{{ page.title }}">
     </div>

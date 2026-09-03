@@ -1,7 +1,7 @@
 ---
 layout: recipe
-title: Carbloading Bananenbrot
-category: backen
+title: "Carbloading Bananenbrot"
+category: "Backen"
 ---
 
 ## Zutaten
