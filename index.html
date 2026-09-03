@@ -5,9 +5,10 @@ title: "Übersicht"
 <section class="recipe-grid" id="recipe-list">
   {% for item in site.rezepte %}
     {% assign raw_dir = item.url | remove: "index.html" | remove: "index/" %}
-    {% unless raw_dir ends_with: "/" %}
+    {% assign last_char = raw_dir | slice: -1 %}
+    {% if last_char != "/" %}
       {% assign raw_dir = raw_dir | append: "/" %}
-    {% endunless %}
+    {% endif %}
 
     {% assign recipe_image = "" %}
     {% if item.image and item.image != "" and item.image != "''" %}

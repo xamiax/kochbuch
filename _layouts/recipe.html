@@ -2,9 +2,10 @@
 layout: default
 ---
 {% assign raw_dir = page.url | remove: "index.html" | remove: "index/" %}
-{% unless raw_dir ends_with: "/" %}
+{% assign last_char = raw_dir | slice: -1 %}
+{% if last_char != "/" %}
   {% assign raw_dir = raw_dir | append: "/" %}
-{% endunless %}
+{% endif %}
 
 {% assign recipe_image = "" %}
 {% if page.image and page.image != "" and page.image != "''" %}
