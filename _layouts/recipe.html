@@ -1,18 +1,18 @@
 ---
 layout: default
 ---
-{% assign recipe_dir = page.url | remove: "index.html" %}
-{% unless recipe_dir ends_with: "/" %}
-  {% assign recipe_dir = recipe_dir | append: "/" %}
+{% assign raw_dir = page.url | remove: "index.html" | remove: "index/" %}
+{% unless raw_dir ends_with: "/" %}
+  {% assign raw_dir = raw_dir | append: "/" %}
 {% endunless %}
 
 {% assign recipe_image = "" %}
 {% if page.image and page.image != "" and page.image != "''" %}
-  {% assign img_filename = page.image | remove_first: "./" %}
-  {% assign recipe_image = recipe_dir | append: img_filename %}
+  {% assign clean_img = page.image | remove_first: "./" %}
+  {% assign recipe_image = raw_dir | append: clean_img %}
 {% else %}
   {% for static_file in site.static_files %}
-    {% if static_file.path contains recipe_dir %}
+    {% if static_file.path contains raw_dir %}
       {% if static_file.extname == ".jpg" or static_file.extname == ".jpeg" or static_file.extname == ".png" or static_file.extname == ".webp" or static_file.extname == ".JPG" or static_file.extname == ".PNG" %}
         {% assign recipe_image = static_file.path %}
         {% break %}
