@@ -6,19 +6,3 @@ collections:
   rezepte:
     output: true
     permalink: /rezepte/:path/
-
-defaults:
-  - scope:
-      path: ""
-      type: "rezepte"
-    values:
-      layout: "recipe"
-
-include:
-  - _rezepte/**/*.jpg
-  - _rezepte/**/*.jpeg
-  - _rezepte/**/*.png
-  - _rezepte/**/*.webp
-  - _rezepte/**/*.JPG
-  - _rezepte/**/*.JPEG
-  - _rezepte/**/*.PNG
