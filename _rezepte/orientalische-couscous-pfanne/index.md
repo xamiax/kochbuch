@@ -1,7 +1,7 @@
 ---
 title: Orientalische Couscous-Pfanne
 category: hauptgericht
-image: 20260903_012118(1).jpg
+image: ''
 ---
 
 ## Zutaten
@@ -31,7 +31,7 @@ image: 20260903_012118(1).jpg
 
 | Angabe | Pro Portion |
 | --- | --- |
-| Energie | \~ 354 kcal |
-| Kohlenhydrate | \~ 62 g |
-| Eiweiß | \~ 14 g |
-| Fett | \~ 8 g |
+| Energie | ~ 354 kcal |
+| Kohlenhydrate | ~ 62 g |
+| Eiweiß | ~ 14 g |
+| Fett | ~ 8 g |
