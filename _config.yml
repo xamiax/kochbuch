@@ -7,6 +7,13 @@ collections:
     output: true
     permalink: /rezepte/:path/
 
+defaults:
+  - scope:
+      path: ""
+      type: "rezepte"
+    values:
+      layout: "recipe"
+
 include:
   - _rezepte/**/*.jpg
   - _rezepte/**/*.jpeg
