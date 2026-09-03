@@ -1,7 +1,7 @@
 ---
 title: Orientalische Couscous-Pfanne
 category: hauptgericht
-image: ''
+image: '20260903_012118(1).jpg'
 ---
 
 ## Zutaten

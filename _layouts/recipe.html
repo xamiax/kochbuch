@@ -1,6 +1,21 @@
 ---
 layout: default
 ---
+{% assign recipe_image = "" %}
+{% if page.image and page.image != "" and page.image != "''" %}
+  {% assign img_filename = page.image | remove_first: "./" %}
+  {% assign recipe_image = page.dir | append: img_filename %}
+{% else %}
+  {% for static_file in site.static_files %}
+    {% if static_file.path contains page.dir %}
+      {% if static_file.extname == ".jpg" or static_file.extname == ".jpeg" or static_file.extname == ".png" or static_file.extname == ".webp" or static_file.extname == ".JPG" or static_file.extname == ".PNG" %}
+        {% assign recipe_image = static_file.path %}
+        {% break %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
 <article class="recipe">
   <div class="breadcrumb">
     <a href="{{ '/' | relative_url }}">&larr; Zurück zur Übersicht</a>
@@ -13,10 +28,9 @@ layout: default
     {% endif %}
   </header>
 
-  {% if page.image and page.image != "" %}
-    {% assign img_path = page.image | remove_first: "./" %}
+  {% if recipe_image != "" %}
     <div class="recipe-image">
-      <img src="{{ page.dir | append: img_path | relative_url }}" alt="{{ page.title }}">
+      <img src="{{ recipe_image | relative_url }}" alt="{{ page.title }}">
     </div>
   {% endif %}
 

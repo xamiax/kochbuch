@@ -4,11 +4,25 @@ title: "Übersicht"
 ---
 <section class="recipe-grid" id="recipe-list">
   {% for item in site.rezepte %}
+    {% assign recipe_image = "" %}
+    {% if item.image and item.image != "" and item.image != "''" %}
+      {% assign img_filename = item.image | remove_first: "./" %}
+      {% assign recipe_image = item.dir | append: img_filename %}
+    {% else %}
+      {% for static_file in site.static_files %}
+        {% if static_file.path contains item.dir %}
+          {% if static_file.extname == ".jpg" or static_file.extname == ".jpeg" or static_file.extname == ".png" or static_file.extname == ".webp" or static_file.extname == ".JPG" or static_file.extname == ".PNG" %}
+            {% assign recipe_image = static_file.path %}
+            {% break %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+
     <article class="recipe-card" data-category="{{ item.category }}">
-      {% if item.image and item.image != "" %}
-        {% assign img_path = item.image | remove_first: "./" %}
+      {% if recipe_image != "" %}
         <a href="{{ item.url | relative_url }}" class="card-image-link">
-          <img src="{{ item.dir | append: img_path | relative_url }}" alt="{{ item.title }}">
+          <img src="{{ recipe_image | relative_url }}" alt="{{ item.title }}">
         </a>
       {% endif %}
       <div class="card-content">
