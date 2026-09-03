@@ -1,7 +1,7 @@
 ---
+layout: recipe
 title: Carbloading Bananenbrot
 category: backen
-image: ''
 ---
 
 ## Zutaten
@@ -30,6 +30,7 @@ image: ''
 
 | Nährwert | Pro 100 g | Pro Scheibe (ca. 60 g) | Pro ganzes Brot (ca. 600 g) |
 | --- | --- | --- | --- |
+<<<<<<< HEAD
 | **Brennwert** | 251 kcal / 1.054 kJ | **150 kcal** / 632 kJ | **1.504 kcal** / 6.322 kJ |
 | **Fett** | 1,3 g | **0,8 g** | **8,1 g** |
 | *davon gesättigte Fettsäuren* | 0,4 g | **0,2 g** | **2,3 g** |
@@ -38,3 +39,14 @@ image: ''
 | **Ballaststoffe** | 2,8 g | **1,7 g** | **16,7 g** |
 | **Eiweiß** | 5,0 g | **3,0 g** | **29,9 g** |
 | **Salz** | 0,38 g | **0,23 g** | **2,3 g** |
+=======
+| **Brennwert** | 251 kcal / 1.054 kJ | **150 kcal** / 632 kJ | **1.504 kcal** / 6.322 kJ |
+| **Fett** | 1,3 g | **0,8 g** | **8,1 g** |
+| *davon gesättigte Fettsäuren* | 0,4 g | **0,2 g** | **2,3 g** |
+| **Kohlenhydrate** | 54,1 g | **32,5 g** | **324,6 g** |
+| *davon Zucker* | 22,2 g | **13,3 g** | **133,0 g** |
+| **Ballaststoffe** | 2,8 g | **1,7 g** | **16,7 g** |
+| **Eiweiß** | 5,0 g | **3,0 g** | **29,9 g** |
+| **Salz** | 0,38 g | **0,23 g** | **2,3 g** |
+
+>>>>>>> d47747d0e3f16177bfa3996efcf4feb08a160f5a

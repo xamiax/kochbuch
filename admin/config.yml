@@ -11,9 +11,14 @@ collections:
     folder: "_rezepte"
     create: true
     path: "{{slug}}/index"
-    media_folder: ""
-    public_folder: ""
+    media_folder: "./"
+    public_folder: "./"
     fields:
+      - label: "Layout"
+        name: "layout"
+        widget: "hidden"
+        default: "recipe"
+
       - label: "Titel"
         name: "title"
         widget: "string"
